@@ -17,7 +17,7 @@ public class RegisterListener implements ActionListener {
         System.out.println(e.getActionCommand());
         if (registerDialog.validateInput()) {
             registerDialog.register();
-            registerDialog.disposeGUI();
         }
+        registerDialog.disposeGUI();
     }
 }
