@@ -24,14 +24,4 @@ public class OrderManagementApplication {
 
     }
 
-    public static void signIn() {
-        UserDao userDao = DIContainer.getUserDao();
-        try {
-            UserDto userDto = userDao.signIn("admin", "admin");
-            System.out.println(userDto.getUsername());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }

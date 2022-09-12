@@ -7,5 +7,9 @@ import java.sql.SQLException;
 
 public interface UserDao extends BaseDao{
 
-    UserDto signIn(String username, String password) throws SQLException;
+    UserDto signIn(String username, String password) ;
+
+    Integer register(User user) ;
+
+    public boolean findUserByUsername(String userName);
 }

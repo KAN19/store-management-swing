@@ -1483,7 +1483,11 @@
     <column id="527" parent="488" name="type_of_member">
       <Position>7</Position>
     </column>
-    <key id="528" parent="488">
+    <index id="528" parent="488" name="user_username_uindex">
+      <ColNames>username</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="529" parent="488">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

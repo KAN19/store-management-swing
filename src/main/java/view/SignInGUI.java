@@ -1,29 +1,28 @@
 package view;
 
-import com.sun.tools.javac.Main;
-import controller.user.UserController;
+import controller.user.SignInListener;
 import domain.dao.UserDao;
 import domain.model.dto.UserDto;
 import helper.DIContainer;
 
 import javax.swing.*;
-import java.sql.SQLException;
-import java.util.Arrays;
 
 public class SignInGUI extends JDialog {
+    private static SignInGUI objectInstance;
+    private final MainStoreGUI mainStoreGUI;
+    private final UserDao userDao = DIContainer.getUserDao();
     private JPanel mainPanel;
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JButton signInButton;
     private JPanel buttonPanel;
+    private SignInListener signInListener;
 
-    private UserController userController;
-    private static SignInGUI objectInstance;
-
-    private final MainStoreGUI mainStoreGUI;
-
-
-    private final UserDao userDao = DIContainer.getUserDao();
+    private SignInGUI(MainStoreGUI mainStoreGUI) {
+        this.mainStoreGUI = mainStoreGUI;
+        subscribeToController();
+        displayGUI();
+    }
 
     public static SignInGUI getSignInGUI(MainStoreGUI mainStoreGUI) {
         if (objectInstance == null) {
@@ -35,38 +34,28 @@ public class SignInGUI extends JDialog {
         return objectInstance;
     }
 
-    private SignInGUI(MainStoreGUI mainStoreGUI) {
-        this.mainStoreGUI = mainStoreGUI;
-        subscribeToController();
-        displayGUI();
-    }
-
     public boolean signIn() {
-        try {
-            UserDto userDto = userDao
-                    .signIn(usernameField.getText(),
-                            String.valueOf(passwordField.getPassword()));
 
-            if (userDto!= null) {
-                System.out.println("Sign in oke");
-                JOptionPane.showMessageDialog(this, "Hello " + userDto.getUsername());
-            } else {
-                System.out.println("Sai mk hoac username");
-                JOptionPane.showMessageDialog(this, "Invalid username or password", "Error", JOptionPane.ERROR_MESSAGE);
+        UserDto userDto = userDao
+                .signIn(usernameField.getText(),
+                        String.valueOf(passwordField.getPassword()));
 
-            }
+        if (userDto != null) {
+            System.out.println("Sign in oke");
+            JOptionPane.showMessageDialog(this, "Hello " + userDto.getUsername());
+        } else {
+            System.out.println("Sai mk hoac username");
+            JOptionPane.showMessageDialog(this, "Invalid username or password", "Error", JOptionPane.ERROR_MESSAGE);
 
-        } catch (SQLException e) {
-            System.out.println("loi roi");
-            throw new RuntimeException(e);
         }
+
         return false;
     }
 
     public void subscribeToController() {
-        userController = new UserController(this);
+        signInListener = new SignInListener(this);
         signInButton.setActionCommand("signIn");
-        signInButton.addActionListener(userController);
+        signInButton.addActionListener(signInListener);
     }
 
     public void displayGUI() {

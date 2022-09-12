@@ -4,6 +4,7 @@ import view.MainStoreGUI;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class MenuBarController implements ActionListener {
 
@@ -16,7 +17,13 @@ public class MenuBarController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         System.out.println(e.getActionCommand());
-        mainStoreGUI.userSignIn();
+        if (Objects.equals(e.getActionCommand(), "displaySignInGUI")) {
+            mainStoreGUI.userSignIn();
+        }
+
+        if (Objects.equals(e.getActionCommand(), "displayRegisterGUI")) {
+            mainStoreGUI.userRegister();
+        }
     }
 
 }

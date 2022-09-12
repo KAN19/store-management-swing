@@ -37,13 +37,19 @@ public class MainStoreGUI extends JFrame {
     }
 
     public void subscribeToController() {
-       signIn.setActionCommand("signIn");
+       signIn.setActionCommand("displaySignInGUI");
        signIn.addActionListener(menuBarController);
 
+       register.setActionCommand("displayRegisterGUI");
+       register.addActionListener(menuBarController);
     }
 
     public void userSignIn() {
         SignInGUI.getSignInGUI(this);
+    }
+
+    public void userRegister() {
+        RegisterGUI.getRegisterGUI(this);
     }
 
     public void displayGUI() {
