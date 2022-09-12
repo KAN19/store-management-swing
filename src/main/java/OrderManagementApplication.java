@@ -1,34 +1,37 @@
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
+import domain.dao.UserDao;
+import domain.model.dto.UserDto;
+import helper.DIContainer;
+import helper.DbConnection;
+import view.MainStoreGUI;
+
 import java.sql.SQLException;
 
 public class OrderManagementApplication {
 
-    public static void createNewDatabase(String fileName) {
+    public static void main(String[] args) {
+        connectToDatabase();
+        MainStoreGUI mainStoreGUI = new MainStoreGUI();
+        mainStoreGUI.setVisible(true);
+//        disconnectToDataBase();
+    }
 
-        String url = "jdbc:sqlite:src/main/resources/" + fileName;
+    public static void connectToDatabase() {
+        DbConnection.init("jdbc:sqlite:src/main/resources/OrderManagementSystem.db");
+    }
+
+    public static void disconnectToDataBase() {
+        DbConnection.getInstance().closeConnection();
+
+    }
+
+    public static void signIn() {
+        UserDao userDao = DIContainer.getUserDao();
         try {
-            Class.forName("org.sqlite.JDBC");
-        } catch (ClassNotFoundException e) {
+            UserDto userDto = userDao.signIn("admin", "admin");
+            System.out.println(userDto.getUsername());
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-        try (Connection conn = DriverManager.getConnection(url)) {
-            if (conn != null) {
-                DatabaseMetaData meta = conn.getMetaData();
-                System.out.println("The driver name is " + meta.getDriverName());
-                System.out.println("The db path is " + conn.getMetaData().getURL());
-                System.out.println("A new database has been created.");
-            }
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-            System.out.println("Create failed");
-        }
     }
 
-    public static void main(String[] args) {
-        createNewDatabase("OrderManagementSystem.db");
-    }
 }
