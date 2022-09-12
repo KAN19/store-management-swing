@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17858409-d0fa-478f-bd10-108bccbcb309" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/user/RegisterListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/BaseGUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/RegisterGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/RegisterGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d538a6a6-6c9f-4f68-808e-2b1b5f2e15d2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d538a6a6-6c9f-4f68-808e-2b1b5f2e15d2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/UserInformationGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/view/UserInformationGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/MenuBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/MenuBarController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/SignInListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/SignInGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SignInGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +23,8 @@
       <list>
         <option value="JUnit5 Test Class" />
         <option value="JUnit3 Test Class" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -133,7 +126,7 @@
       <workItem from="1662828635846" duration="797000" />
       <workItem from="1662899183679" duration="522000" />
       <workItem from="1662944899003" duration="3143000" />
-      <workItem from="1662948643239" duration="4287000" />
+      <workItem from="1662948643239" duration="5968000" />
     </task>
     <servers />
   </component>

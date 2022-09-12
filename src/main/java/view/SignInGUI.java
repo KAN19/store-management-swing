@@ -41,6 +41,8 @@ public class SignInGUI extends JDialog {
                         String.valueOf(passwordField.getPassword()));
 
         if (userDto != null) {
+            DIContainer.setCurrentUser(userDto);
+            mainStoreGUI.enableViewInformationMenuItem();
             System.out.println("Sign in oke");
             JOptionPane.showMessageDialog(this, "Hello " + userDto.getUsername());
         } else {

@@ -7,7 +7,7 @@ import domain.model.dto.UserDto;
 
 public class DIContainer {
     private static UserDao userDao;
-    private static UserDto userDto;
+    private static UserDto userDto = null;
 
     private DIContainer() {
 
@@ -18,5 +18,13 @@ public class DIContainer {
             userDao = new UserDaoImpl();
         }
         return userDao;
+    }
+
+    public static UserDto getCurrentUser() {
+        return userDto;
+    }
+
+    public static void setCurrentUser(UserDto user) {
+        userDto = user;
     }
 }

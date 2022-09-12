@@ -1,6 +1,7 @@
 package view;
 
 import controller.MenuBarController;
+import helper.DIContainer;
 
 import javax.swing.*;
 
@@ -10,6 +11,7 @@ public class MainStoreGUI extends JFrame {
     private JMenu jMenu;
     private JMenuItem signIn;
     private JMenuItem register;
+    private JMenuItem viewInformation;
     private MenuBarController menuBarController;
 
     public MainStoreGUI() {
@@ -23,7 +25,10 @@ public class MainStoreGUI extends JFrame {
     public void createMenuBar() {
         jMenu.add(signIn);
         jMenu.add(register);
+        jMenu.add(viewInformation);
+
         jMenuBar.add(jMenu);
+
         this.setJMenuBar(jMenuBar);
     }
 
@@ -32,6 +37,9 @@ public class MainStoreGUI extends JFrame {
         jMenu = new JMenu("User");
         signIn = new JMenuItem("Sign In");
         register = new JMenuItem("Register");
+
+        viewInformation = new JMenuItem("View User");
+        viewInformation.setEnabled(false);
 
         menuBarController = new MenuBarController(this);
     }
@@ -42,6 +50,9 @@ public class MainStoreGUI extends JFrame {
 
        register.setActionCommand("displayRegisterGUI");
        register.addActionListener(menuBarController);
+
+       viewInformation.setActionCommand("viewInformation");
+       viewInformation.addActionListener(menuBarController);
     }
 
     public void userSignIn() {
@@ -50,6 +61,19 @@ public class MainStoreGUI extends JFrame {
 
     public void userRegister() {
         RegisterGUI.getRegisterGUI(this);
+    }
+
+    public void viewUserInformation() {
+        JOptionPane.showMessageDialog(this,
+                "Username: " + DIContainer.getCurrentUser().getUsername() + "\n"
+                + "FullName: " + DIContainer.getCurrentUser().getFullName() + "\n"
+                + "PhoneNumber: " + DIContainer.getCurrentUser().getPhoneNumber() + "\n"
+                + "TypeOfMember: " + DIContainer.getCurrentUser().getTypeOfMember() + "\n"
+        );
+    }
+
+    public void enableViewInformationMenuItem() {
+        viewInformation.setEnabled(true);
     }
 
     public void displayGUI() {

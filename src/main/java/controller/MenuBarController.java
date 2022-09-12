@@ -24,6 +24,10 @@ public class MenuBarController implements ActionListener {
         if (Objects.equals(e.getActionCommand(), "displayRegisterGUI")) {
             mainStoreGUI.userRegister();
         }
+
+        if (Objects.equals(e.getActionCommand(), "viewInformation")) {
+            mainStoreGUI.viewUserInformation();
+        }
     }
 
 }
