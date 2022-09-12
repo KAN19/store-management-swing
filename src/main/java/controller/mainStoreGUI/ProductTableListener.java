@@ -19,6 +19,8 @@ public class ProductTableListener implements ListSelectionListener {
     @Override
     public void valueChanged(ListSelectionEvent e) {
         int selectedRow = mainStoreGUI.getProductTable().getSelectedRow();
-        mainStoreGUI.updateDetailProduct(selectedRow);
+        if (selectedRow >= 0) {
+            mainStoreGUI.updateDetailProduct(selectedRow);
+        }
     }
 }

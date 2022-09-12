@@ -1,21 +1,24 @@
 package view;
 
+import controller.mainStoreGUI.ComboBoxListener;
 import controller.mainStoreGUI.MenuBarListener;
 import controller.mainStoreGUI.ProductTableListener;
+import domain.dao.CategoryDao;
 import domain.dao.ProductDao;
+import domain.model.Category;
 import domain.model.dto.ProductDto;
 import helper.DIContainer;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import java.util.Objects;
 
 public class MainStoreGUI extends JFrame {
     private JPanel mainPanel;
     private JComboBox categoryComboBox;
     private JTable productTable;
     private JScrollPane jScrollPane;
-    private JButton findByCategoryButton;
     private JTextField detailProductIdField;
     private JTextField detailProductNameField;
     private JTextField detailProductPriceField;
@@ -27,6 +30,7 @@ public class MainStoreGUI extends JFrame {
     private JMenuItem viewInformation;
     private MenuBarListener menuBarListener;
     private ProductTableListener productListener;
+    private ComboBoxListener comboBoxListener;
 
     private ListSelectionModel listSelectionModel;
 
@@ -34,10 +38,13 @@ public class MainStoreGUI extends JFrame {
 
     private final ProductDao productDao = DIContainer.getProductDao();
 
+    private final CategoryDao categoryDao = DIContainer.getCategoryDao();
+
 
     public MainStoreGUI() {
         initGUI();
         createMenuBar();
+        createCategoryComboBox();
         createTable();
         subscribeToController();
         displayGUI();
@@ -64,6 +71,8 @@ public class MainStoreGUI extends JFrame {
 
         menuBarListener = new MenuBarListener(this);
 
+        comboBoxListener = new ComboBoxListener(this);
+
         listSelectionModel = productTable.getSelectionModel();
         listSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         productListener = new ProductTableListener(this);
@@ -71,7 +80,7 @@ public class MainStoreGUI extends JFrame {
     }
 
     public void createTable() {
-        productData = this.getProductsListForTable();
+        productData = this.convertProductsToTableData(productDao.getAllProducts());
         productTable.setModel(new DefaultTableModel(productData, new String[] {
                 "Id",
                 "Product Name",
@@ -80,9 +89,23 @@ public class MainStoreGUI extends JFrame {
         }));
     }
 
-    public Object[][] getProductsListForTable() {
+    public void createCategoryComboBox() {
+        categoryComboBox.addItem(new Category(0L, "All"));
+        getCategories().forEach(item -> {
+            categoryComboBox.addItem(item);
+        });
+    }
 
-        List<ProductDto> allProducts = productDao.getAllProducts();
+    public List<Category> getCategories() {
+        List<Category> categories = categoryDao.getCategories();
+        return categories;
+    }
+
+    public Object[][] convertProductsToTableData(List<ProductDto> allProducts) {
+
+        if (allProducts == null) {
+            return null;
+        }
 
         Object[][] data = new Object[allProducts.size()][];
 
@@ -110,6 +133,8 @@ public class MainStoreGUI extends JFrame {
        viewInformation.addActionListener(menuBarListener);
 
        listSelectionModel.addListSelectionListener(productListener);
+
+       categoryComboBox.addActionListener(comboBoxListener);
     }
 
     public void userSignIn() {
@@ -136,7 +161,7 @@ public class MainStoreGUI extends JFrame {
     public void displayGUI() {
         this.add(mainPanel);
         this.setVisible(true);
-        this.setSize(1000, 600);
+        this.setSize(800, 500);
         this.setTitle("Main store");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
@@ -149,9 +174,27 @@ public class MainStoreGUI extends JFrame {
         detailProductCategoryField.setText(productData[selectedRow][3].toString());
     }
 
+    public void filterProductsByCategory(Category category) {
+        Object[][] data = null;
+        if (Objects.equals(category.getCategoryName(), "All")) {
+            data = convertProductsToTableData(productDao.getAllProducts());
+        } else {
+            data = convertProductsToTableData(productDao.getProductsByCategory(category));
+        }
+
+        productTable.setModel(new DefaultTableModel(data, new String[] {
+                "Id",
+                "Product Name",
+                "Price",
+                "Category"
+        }));
+    }
+
+
     public JTable getProductTable() {
         return productTable;
     }
+
 
 
 }

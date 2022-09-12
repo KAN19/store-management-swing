@@ -43,4 +43,36 @@ public class ProductDaoImpl implements ProductDao {
         }
         return productsList;
     }
+
+    @Override
+    public List<ProductDto> getProductsByCategory(Category searchingCategory) {
+        PreparedStatement statement = null;
+        List<ProductDto> productsList;
+        try {
+            statement = connection
+                    .prepareStatement("Select *, product.id as product_id from category, product " +
+                            "where category.id = product.category_id AND product.category_id = ?");
+            statement.setLong(1, searchingCategory.getCategoryId());
+            ResultSet result = statement.executeQuery();
+
+            productsList = new ArrayList<>();
+
+            while (result.next()) {
+                Category category = new Category(
+                        result.getLong("category_id"),
+                        result.getString("category_name"));
+
+                ProductDto productDto = new ProductDto();
+                productDto.setProductName(result.getString("product_name"));
+                productDto.setCategory(category);
+                productDto.setPrice(result.getDouble("price"));
+                productDto.setId(result.getLong("product_id"));
+
+                productsList.add(productDto);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return productsList;
+    }
 }

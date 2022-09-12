@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17858409-d0fa-478f-bd10-108bccbcb309" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ProductTableListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/CategoryDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/ProductDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CategoryDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/ProductDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/model/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d538a6a6-6c9f-4f68-808e-2b1b5f2e15d2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d538a6a6-6c9f-4f68-808e-2b1b5f2e15d2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ComboBoxListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MenuBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/MenuBarListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/model/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ProductTableListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ProductTableListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/CategoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/CategoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/ProductDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CategoryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CategoryDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/ProductDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/model/Category.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" afterDir="false" />
     </list>
@@ -48,32 +47,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH": "154",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "279",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.PaletteManager.WIDTH&quot;: &quot;154&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;279&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
@@ -133,7 +132,8 @@
       <workItem from="1662899183679" duration="522000" />
       <workItem from="1662944899003" duration="3143000" />
       <workItem from="1662948643239" duration="6621000" />
-      <workItem from="1662968948576" duration="10641000" />
+      <workItem from="1662968948576" duration="11129000" />
+      <workItem from="1662997095520" duration="3600000" />
     </task>
     <servers />
   </component>
