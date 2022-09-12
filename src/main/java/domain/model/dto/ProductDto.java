@@ -1,5 +1,7 @@
 package domain.model.dto;
 
+import domain.model.Category;
+
 public class ProductDto {
     private Long id;
 
@@ -8,6 +10,24 @@ public class ProductDto {
     private Double price;
 
     private Long categoryId;
+
+    private Category category;
+
+    public Long getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Long categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 
     public Long getId() {
         return id;
@@ -33,11 +53,4 @@ public class ProductDto {
         this.price = price;
     }
 
-    public Long getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(Long categoryId) {
-        this.categoryId = categoryId;
-    }
 }

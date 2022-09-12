@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17858409-d0fa-478f-bd10-108bccbcb309" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/domain/model/dto/ProductDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ProductTableListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/CategoryDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/ProductDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CategoryDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/ProductDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d538a6a6-6c9f-4f68-808e-2b1b5f2e15d2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d538a6a6-6c9f-4f68-808e-2b1b5f2e15d2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/MenuBarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/MenuBarListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/dto/ProductDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/model/dto/ProductDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +133,7 @@
       <workItem from="1662899183679" duration="522000" />
       <workItem from="1662944899003" duration="3143000" />
       <workItem from="1662948643239" duration="6621000" />
-      <workItem from="1662968948576" duration="3966000" />
+      <workItem from="1662968948576" duration="10641000" />
     </task>
     <servers />
   </component>

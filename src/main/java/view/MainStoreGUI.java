@@ -1,6 +1,8 @@
 package view;
 
-import controller.MenuBarController;
+import controller.mainStoreGUI.MenuBarListener;
+import controller.mainStoreGUI.ProductTableListener;
+import domain.dao.ProductDao;
 import domain.model.dto.ProductDto;
 import helper.DIContainer;
 
@@ -23,7 +25,15 @@ public class MainStoreGUI extends JFrame {
     private JMenuItem signIn;
     private JMenuItem register;
     private JMenuItem viewInformation;
-    private MenuBarController menuBarController;
+    private MenuBarListener menuBarListener;
+    private ProductTableListener productListener;
+
+    private ListSelectionModel listSelectionModel;
+
+    private Object[][] productData;
+
+    private final ProductDao productDao = DIContainer.getProductDao();
+
 
     public MainStoreGUI() {
         initGUI();
@@ -52,17 +62,17 @@ public class MainStoreGUI extends JFrame {
         viewInformation = new JMenuItem("View User");
         viewInformation.setEnabled(false);
 
-        menuBarController = new MenuBarController(this);
+        menuBarListener = new MenuBarListener(this);
+
+        listSelectionModel = productTable.getSelectionModel();
+        listSelectionModel.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        productListener = new ProductTableListener(this);
+
     }
 
     public void createTable() {
-
-        Object[][] data = {
-                {1, "MSI Modern 14", "140000", "Laptop"},
-                {2, "Lenovo ABC", "190000", "Laptop"},
-        };
-
-        productTable.setModel(new DefaultTableModel(data, new String[] {
+        productData = this.getProductsListForTable();
+        productTable.setModel(new DefaultTableModel(productData, new String[] {
                 "Id",
                 "Product Name",
                 "Price",
@@ -70,19 +80,36 @@ public class MainStoreGUI extends JFrame {
         }));
     }
 
-    public List<ProductDto> getProductsList() {
-        return null;
+    public Object[][] getProductsListForTable() {
+
+        List<ProductDto> allProducts = productDao.getAllProducts();
+
+        Object[][] data = new Object[allProducts.size()][];
+
+        for (int i = 0; i < allProducts.size(); i++) {
+            Long id = allProducts.get(i).getId();
+            String productName = allProducts.get(i).getProductName();
+            String price = String.format("%,.0f", allProducts.get(i).getPrice());
+            String category = allProducts.get(i).getCategory().getCategoryName();
+
+            Object[] objects = {id, productName, price, category};
+
+            data[i] = objects;
+        }
+        return data ;
     }
 
     public void subscribeToController() {
        signIn.setActionCommand("displaySignInGUI");
-       signIn.addActionListener(menuBarController);
+       signIn.addActionListener(menuBarListener);
 
        register.setActionCommand("displayRegisterGUI");
-       register.addActionListener(menuBarController);
+       register.addActionListener(menuBarListener);
 
        viewInformation.setActionCommand("viewInformation");
-       viewInformation.addActionListener(menuBarController);
+       viewInformation.addActionListener(menuBarListener);
+
+       listSelectionModel.addListSelectionListener(productListener);
     }
 
     public void userSignIn() {
@@ -114,5 +141,17 @@ public class MainStoreGUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
+
+    public void updateDetailProduct(int selectedRow) {
+        detailProductIdField.setText(productData[selectedRow][0].toString());
+        detailProductNameField.setText(productData[selectedRow][1].toString());
+        detailProductPriceField.setText(productData[selectedRow][2].toString());
+        detailProductCategoryField.setText(productData[selectedRow][3].toString());
+    }
+
+    public JTable getProductTable() {
+        return productTable;
+    }
+
 
 }

@@ -1,4 +1,4 @@
-package controller;
+package controller.mainStoreGUI;
 
 import view.MainStoreGUI;
 
@@ -6,11 +6,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
-public class MenuBarController implements ActionListener {
+public class MenuBarListener implements ActionListener {
 
     private final MainStoreGUI mainStoreGUI;
 
-    public MenuBarController(MainStoreGUI mainStoreGUI) {
+    public MenuBarListener(MainStoreGUI mainStoreGUI) {
         this.mainStoreGUI = mainStoreGUI;
     }
 

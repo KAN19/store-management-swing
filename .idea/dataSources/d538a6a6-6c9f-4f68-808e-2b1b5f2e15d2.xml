@@ -1407,7 +1407,7 @@
       <Position>2</Position>
     </column>
     <column id="508" parent="485" name="price">
-      <DataType>DOUBLE(10,2 digit)|0s</DataType>
+      <DataType>DOUBLE(10)|0s</DataType>
       <Position>3</Position>
     </column>
     <column id="509" parent="485" name="category_id">
