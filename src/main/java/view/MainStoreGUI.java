@@ -1,12 +1,23 @@
 package view;
 
 import controller.MenuBarController;
+import domain.model.dto.ProductDto;
 import helper.DIContainer;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.util.List;
 
 public class MainStoreGUI extends JFrame {
     private JPanel mainPanel;
+    private JComboBox categoryComboBox;
+    private JTable productTable;
+    private JScrollPane jScrollPane;
+    private JButton findByCategoryButton;
+    private JTextField detailProductIdField;
+    private JTextField detailProductNameField;
+    private JTextField detailProductPriceField;
+    private JTextField detailProductCategoryField;
     private JMenuBar jMenuBar;
     private JMenu jMenu;
     private JMenuItem signIn;
@@ -17,7 +28,7 @@ public class MainStoreGUI extends JFrame {
     public MainStoreGUI() {
         initGUI();
         createMenuBar();
-
+        createTable();
         subscribeToController();
         displayGUI();
     }
@@ -42,6 +53,25 @@ public class MainStoreGUI extends JFrame {
         viewInformation.setEnabled(false);
 
         menuBarController = new MenuBarController(this);
+    }
+
+    public void createTable() {
+
+        Object[][] data = {
+                {1, "MSI Modern 14", "140000", "Laptop"},
+                {2, "Lenovo ABC", "190000", "Laptop"},
+        };
+
+        productTable.setModel(new DefaultTableModel(data, new String[] {
+                "Id",
+                "Product Name",
+                "Price",
+                "Category"
+        }));
+    }
+
+    public List<ProductDto> getProductsList() {
+        return null;
     }
 
     public void subscribeToController() {
