@@ -1,12 +1,11 @@
 package view;
 
 import controller.user.RegisterListener;
-import domain.dao.UserDao;
-import domain.model.User;
+import domain.dao.CustomerDao;
+import domain.model.Customer;
 import helper.DIContainer;
 
 import javax.swing.*;
-import java.sql.SQLException;
 
 public class RegisterGUI extends JDialog implements BaseGUI{
     private JTextField usernameField;
@@ -23,7 +22,7 @@ public class RegisterGUI extends JDialog implements BaseGUI{
 
     private final MainStoreGUI mainStoreGUI;
 
-    private final UserDao userDao = DIContainer.getUserDao();
+    private final CustomerDao customerDao = DIContainer.getUserDao();
 
     private RegisterGUI(MainStoreGUI mainStoreGUI) {
         this.mainStoreGUI = mainStoreGUI;
@@ -42,19 +41,7 @@ public class RegisterGUI extends JDialog implements BaseGUI{
     }
 
     public void register() {
-        User user = new User();
-        user.setUsername(usernameField.getText());
-        user.setPassword(String.valueOf(passwordField.getPassword()));
-        user.setFullName(fullNameField.getText());
-        user.setPhoneNumber(phoneNumberField.getText());
-        user.setTypeOfMember("silver");
-        user.setRole("customer");
 
-        if (userDao.register(user) >= 0) {
-            JOptionPane.showMessageDialog(this, "Register successfully!");
-        } else {
-            JOptionPane.showMessageDialog(this, "Register failed!", "Error", JOptionPane.ERROR_MESSAGE);
-        };
     }
 
     public boolean validateInput() {
@@ -63,7 +50,7 @@ public class RegisterGUI extends JDialog implements BaseGUI{
             return false;
         }
 
-        if (userDao.findUserByUsername(usernameField.getText())) {
+        if (customerDao.findUserByUsername(usernameField.getText())) {
             JOptionPane.showMessageDialog(this, "Username has been taken!", "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }

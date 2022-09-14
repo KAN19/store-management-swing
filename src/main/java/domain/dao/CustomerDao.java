@@ -1,15 +1,13 @@
 package domain.dao;
 
-import domain.model.User;
+import domain.model.Customer;
 import domain.model.dto.UserDto;
 
-import java.sql.SQLException;
-
-public interface UserDao extends BaseDao{
+public interface CustomerDao extends BaseDao{
 
     UserDto signIn(String username, String password) ;
 
-    Integer register(User user) ;
+    boolean register(Customer customer) ;
 
     public boolean findUserByUsername(String userName);
 }

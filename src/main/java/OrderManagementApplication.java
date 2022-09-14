@@ -1,17 +1,24 @@
-import domain.dao.UserDao;
-import domain.model.dto.UserDto;
-import helper.DIContainer;
+import domain.dao.CustomerDao;
+import domain.dao.impl.CustomerDaoImpl;
+import domain.model.Customer;
+import domain.model.Product;
 import helper.DbConnection;
-import view.MainStoreGUI;
-import view.WelcomeGUI;
 
-import java.sql.SQLException;
+import java.util.List;
 
 public class OrderManagementApplication {
 
     public static void main(String[] args) {
         connectToDatabase();
-        new WelcomeGUI();
+        CustomerDao customerDao = new CustomerDaoImpl();
+//        List<Customer> customersFromFiles = customerDao.getCustomersFromFiles();
+//        customersFromFiles.forEach(System.out::println);
+
+        customerDao.register(new Customer("C007",
+                "John Smith",
+                "02 West Drive",
+                "0424125598",
+                "Regular", "ngueynkiet", "2222222"));
     }
 
     public static void connectToDatabase() {

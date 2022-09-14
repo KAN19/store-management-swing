@@ -1,7 +1,7 @@
 package view;
 
 import controller.user.SignInListener;
-import domain.dao.UserDao;
+import domain.dao.CustomerDao;
 import domain.model.dto.UserDto;
 import helper.DIContainer;
 
@@ -10,7 +10,7 @@ import javax.swing.*;
 public class SignInGUI extends JDialog {
     private static SignInGUI objectInstance;
     private final MainStoreGUI mainStoreGUI;
-    private final UserDao userDao = DIContainer.getUserDao();
+    private final CustomerDao customerDao = DIContainer.getUserDao();
     private JPanel mainPanel;
     private JTextField usernameField;
     private JPasswordField passwordField;
@@ -36,7 +36,7 @@ public class SignInGUI extends JDialog {
 
     public boolean signIn() {
 
-        UserDto userDto = userDao
+        UserDto userDto = customerDao
                 .signIn(usernameField.getText(),
                         String.valueOf(passwordField.getPassword()));
 

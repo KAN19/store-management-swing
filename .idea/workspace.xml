@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17858409-d0fa-478f-bd10-108bccbcb309" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CustomerDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/customers.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/items.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/BaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/UserDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/RegisterGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/view/SignInGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/view/SignInGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/domain/dao/impl/UserDaoImplTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +60,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit3&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3&quot;: &quot;junit.framework.TestCase&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/UIT/Project/rmit/OrderMangementSystem/src/main/resources&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -64,6 +77,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\UIT\Project\rmit\OrderMangementSystem\src\main\resources" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="junit.framework.TestCase" />
       <recent name="" />
@@ -81,7 +97,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserDaoImplTest.testSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerDaoImplTest.testSignIn" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="OrderMangementSystem" />
       <extension name="coverage">
         <pattern>
@@ -90,7 +106,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="domain.dao.impl" />
-      <option name="MAIN_CLASS_NAME" value="domain.dao.impl.UserDaoImplTest" />
+      <option name="MAIN_CLASS_NAME" value="domain.dao.impl.CustomerDaoImplTest" />
       <option name="METHOD_NAME" value="testSignIn" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -100,7 +116,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.OrderManagementApplication" />
-        <item itemvalue="JUnit.UserDaoImplTest.testSignIn" />
+        <item itemvalue="JUnit.CustomerDaoImplTest.testSignIn" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +144,8 @@
       <workItem from="1663073870829" duration="1378000" />
       <workItem from="1663076710365" duration="101000" />
       <workItem from="1663088132144" duration="1548000" />
-      <workItem from="1663139917817" duration="608000" />
+      <workItem from="1663139917817" duration="781000" />
+      <workItem from="1663141634650" duration="3635000" />
     </task>
     <servers />
   </component>
