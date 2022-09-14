@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17858409-d0fa-478f-bd10-108bccbcb309" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/WelcomeGUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/view/WelcomeGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/RegisterListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/user/RegisterListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/OrderManagementSystem.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +123,12 @@
       <workItem from="1662944899003" duration="3143000" />
       <workItem from="1662948643239" duration="6621000" />
       <workItem from="1662968948576" duration="11129000" />
-      <workItem from="1662997095520" duration="4646000" />
+      <workItem from="1662997095520" duration="5126000" />
+      <workItem from="1663053782005" duration="598000" />
+      <workItem from="1663073870829" duration="1378000" />
+      <workItem from="1663076710365" duration="101000" />
+      <workItem from="1663088132144" duration="1548000" />
+      <workItem from="1663139917817" duration="608000" />
     </task>
     <servers />
   </component>
