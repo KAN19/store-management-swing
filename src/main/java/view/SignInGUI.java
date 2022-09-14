@@ -10,7 +10,7 @@ import javax.swing.*;
 public class SignInGUI extends JDialog {
     private static SignInGUI objectInstance;
     private final MainStoreGUI mainStoreGUI;
-    private final CustomerDao customerDao = DIContainer.getUserDao();
+    private final CustomerDao customerDao = DIContainer.getCustomerDao();
     private JPanel mainPanel;
     private JTextField usernameField;
     private JPasswordField passwordField;

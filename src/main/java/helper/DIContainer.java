@@ -18,7 +18,7 @@ public class DIContainer {
 
     }
 
-    public static CustomerDao getUserDao() {
+    public static CustomerDao getCustomerDao() {
         if (customerDao == null) {
             customerDao = new CustomerDaoImpl();
         }

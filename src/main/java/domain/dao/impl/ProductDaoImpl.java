@@ -2,6 +2,7 @@ package domain.dao.impl;
 
 import domain.dao.ProductDao;
 import domain.model.Category;
+import domain.model.Product;
 import domain.model.dto.ProductDto;
 import domain.model.dto.UserDto;
 
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class ProductDaoImpl implements ProductDao {
     @Override
@@ -74,5 +76,15 @@ public class ProductDaoImpl implements ProductDao {
             throw new RuntimeException(e);
         }
         return productsList;
+    }
+
+    @Override
+    public List<Product> getProductsByCategory(String category) {
+        List<Product> products = getAllProductsFromFiles()
+                .stream()
+                .filter(product -> product.getCategory().equalsIgnoreCase(category))
+                .collect(Collectors.toList());
+
+        return products;
     }
 }

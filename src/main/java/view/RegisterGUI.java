@@ -2,7 +2,6 @@ package view;
 
 import controller.user.RegisterListener;
 import domain.dao.CustomerDao;
-import domain.model.Customer;
 import helper.DIContainer;
 
 import javax.swing.*;
@@ -22,7 +21,7 @@ public class RegisterGUI extends JDialog implements BaseGUI{
 
     private final MainStoreGUI mainStoreGUI;
 
-    private final CustomerDao customerDao = DIContainer.getUserDao();
+    private final CustomerDao customerDao = DIContainer.getCustomerDao();
 
     private RegisterGUI(MainStoreGUI mainStoreGUI) {
         this.mainStoreGUI = mainStoreGUI;
