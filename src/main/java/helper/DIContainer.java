@@ -1,18 +1,16 @@
 package helper;
 
-import domain.dao.CategoryDao;
 import domain.dao.ProductDao;
 import domain.dao.CustomerDao;
-import domain.dao.impl.CategoryDaoImpl;
 import domain.dao.impl.ProductDaoImpl;
 import domain.dao.impl.CustomerDaoImpl;
-import domain.model.dto.UserDto;
+import domain.model.Customer;
 
 public class DIContainer {
     private static CustomerDao customerDao;
     private static ProductDao productDao;
-    private static CategoryDao categoryDao;
-    private static UserDto userDto = null;
+
+    private static Customer customer = null;
 
     private DIContainer() {
 
@@ -32,18 +30,12 @@ public class DIContainer {
         return productDao;
     }
 
-    public static CategoryDao getCategoryDao() {
-        if (categoryDao == null) {
-            categoryDao = new CategoryDaoImpl();
-        }
-        return categoryDao;
+
+    public static Customer getCurrentUser() {
+        return customer;
     }
 
-    public static UserDto getCurrentUser() {
-        return userDto;
-    }
-
-    public static void setCurrentUser(UserDto user) {
-        userDto = user;
+    public static void setCurrentUser(Customer loginCustomer) {
+        customer = loginCustomer;
     }
 }

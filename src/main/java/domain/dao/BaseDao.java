@@ -2,16 +2,13 @@ package domain.dao;
 
 import domain.model.Product;
 import domain.model.Customer;
-import helper.DbConnection;
 
 import java.io.*;
-import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public interface BaseDao {
-    public final Connection connection = DbConnection.getInstance().getConnection();
+public interface BaseDao { ;
 
     default List<Customer> getCustomersFromFiles()  {
         String defaultUserFileName = "src/main/resources/customers.txt";
@@ -28,6 +25,9 @@ public interface BaseDao {
 
         while(input.hasNext()) {
             String nextLine = input.nextLine();
+            if (nextLine.isEmpty()) {
+                continue;
+            }
             if (nextLine.charAt(0) == '#') {
                 continue;
             }

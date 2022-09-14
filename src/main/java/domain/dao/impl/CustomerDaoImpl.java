@@ -2,20 +2,27 @@ package domain.dao.impl;
 
 import domain.dao.CustomerDao;
 import domain.model.Customer;
-import domain.model.dto.UserDto;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
+import java.util.List;
 import java.util.StringJoiner;
 
 public class CustomerDaoImpl implements CustomerDao {
 
     @Override
-    public UserDto signIn(String username, String password) {
+    public Customer login(String username, String password) {
+        List<Customer> customersFromFiles = this.getCustomersFromFiles();
 
-        return null;
+        Customer responseCustomer = customersFromFiles.stream()
+                .filter(customer -> customer.getUsername().equals(username)
+                        && customer.getPassword().equals(password))
+                .findAny()
+                .orElse(null);
+
+        return responseCustomer;
     }
 
     @Override
@@ -47,7 +54,10 @@ public class CustomerDaoImpl implements CustomerDao {
 
     @Override
     public boolean findUserByUsername(String username) {
-        return false;
+        List<Customer> customersFromFiles = getCustomersFromFiles();
+        return customersFromFiles
+                .stream()
+                .anyMatch(customer -> customer.getUsername().equals(username));
     }
 
 }

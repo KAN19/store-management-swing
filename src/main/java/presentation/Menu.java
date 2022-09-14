@@ -2,12 +2,14 @@ package presentation;
 
 import domain.dao.CustomerDao;
 import domain.dao.ProductDao;
+import domain.model.Customer;
 import domain.model.Product;
-import domain.model.dto.ProductDto;
 import helper.DIContainer;
+import helper.Validator;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.UUID;
 
 public class Menu {
     private static final Scanner scanner = new Scanner(System.in);
@@ -15,12 +17,29 @@ public class Menu {
     private final ProductDao productDao = DIContainer.getProductDao();
 
     public Menu() {
-        displayMainMenu();
+        displayWelcomeScreen();
     }
 
     public void displayWelcomeScreen() {
-            System.out.println("Hello welcome screen ne");
-            scanner.nextInt();
+        System.out.println(
+                "|==============================================================|");
+        System.out.println(
+                "|                   COSC2081 GROUP ASSIGNMENT                  |");
+        System.out.println(
+                "|                 STORE ORDER MANAGEMENT SYSTEM                |");
+        System.out.println(
+                "|                     Instructor: Mr. Minh Vu                  |");
+        System.out.println(
+                "|                      S3777228, Le Anh Khoa                   |");
+        System.out.println(
+                "|                      S3926005, Vu Phan Anh                   |");
+        System.out.println(
+                "|                      S3914486, Nguyen Ky Anh                 |");
+        System.out.println(
+                "===============================================================|");
+
+        waitUntilPressKey();
+        displayMainMenu();
     }
 
     public void displayMainMenu() {
@@ -64,39 +83,141 @@ public class Menu {
             case 1: {
                 System.out.println(
                         "=========================   CUSTOMER REGISTER   ==========================");
-
-                scanner.nextLine();
+                this.customerRegister();
+                this.waitUntilPressKey();
                 break;
             }
             case 2:
                 System.out.println(
                         "==========================   LOGIN  ===========================");
-                scanner.nextLine();
+                this.customerLogin();
+                this.waitUntilPressKey();
                 break;
             case 3:
                 System.out.println(
                         "=======================   VIEW CUSTOMER INFORMATION   =======================");
-
-                scanner.nextLine();
+                this.displayCurrentCustomer();
+                this.waitUntilPressKey();
                 break;
             case 4:
                 System.out.println(
                         "==========================   VIEW PRODUCTS  ========================");
                 this.displayAllProducts();
-                System.out.println("\n--- Enter to continue");
-                scanner.nextLine();
+                this.waitUntilPressKey();
                 break;
             case 5:
                 System.out.println(
                         "========================  SEARCH PRODUCT BY CATEGORY  ========================");
-                System.out.print("Enter category ");
+                System.out.print("Enter category: ");
                 String searchingCategory = scanner.nextLine();
                 this.displayProductsByCategory(searchingCategory);
-                System.out.println("\n--- Enter to continue");
-                scanner.nextLine();
+                this.waitUntilPressKey();
                 break;
             default:
                 break;
+        }
+    }
+
+    private void customerRegister(){
+        Validator validator = new Validator();
+        String username, password, fullName, address, phoneNumber;
+
+        boolean validUsername = true;
+        boolean validPhoneNumber = true;
+
+        do {
+            System.out.print("Username: ");
+            username = scanner.nextLine();
+            validUsername = validator.isValidUsername(username);
+            if (!validUsername) {
+                System.out.println("Invalid username!");
+            }
+        } while (!validUsername);
+
+        do {
+            System.out.print("Password: ");
+            password = scanner.nextLine();
+            if (password.isEmpty()) {
+                System.out.println("Invalid password!");
+            }
+        } while (password.isEmpty());
+
+        do {
+            System.out.print("Full name: ");
+            fullName = scanner.nextLine();
+            if (fullName.isEmpty()) {
+                System.out.println("Invalid name!");
+            }
+        } while (fullName.isEmpty());
+
+        do {
+            System.out.print("Address: ");
+            address = scanner.nextLine();
+            if (address.isEmpty()) {
+                System.out.println("Invalid Address!");
+            }
+        } while (address.isEmpty());
+
+        do {
+            System.out.print("Phone number: ");
+            phoneNumber = scanner.nextLine();
+            validPhoneNumber = !phoneNumber.isEmpty() && phoneNumber.matches("\\d+");
+            if (!validPhoneNumber) {
+                System.out.println("Invalid phone number!");
+            }
+        } while (!validPhoneNumber);
+
+        Customer newCustomer = new Customer(
+                UUID.randomUUID().toString().substring(0, 5),
+                fullName,
+                address,
+                phoneNumber,
+                "Regular",
+                username,
+                password
+        );
+
+        if (customerDao.register(newCustomer)) {
+            System.out.println("Register successfully");
+        } else {
+            System.out.println("Error! Something went wrong!");
+        }
+    }
+
+    private void waitUntilPressKey() {
+        System.out.println("\n--- Enter to continue");
+        scanner.nextLine();
+    }
+
+    private void customerLogin() {
+        System.out.print("Username:");
+        String username = scanner.nextLine();
+        System.out.print("password:");
+        String password = scanner.nextLine();
+
+        Customer loginCustomer = customerDao.login(username, password);
+
+        if (loginCustomer == null) {
+            System.out.println("Invalid username or password!");
+        } else {
+            System.out.println("Login successfully!");
+            System.out.println("Hello " + loginCustomer.getUsername());
+            DIContainer.setCurrentUser(loginCustomer);
+        }
+    }
+
+    private void displayCurrentCustomer() {
+        if (DIContainer.getCurrentUser() == null) {
+            System.out.println("Please login before using this feature!");
+        } else {
+            System.out.println(
+                    "ID: " + DIContainer.getCurrentUser().getCustomerId() + "\n"
+                            + "Username: " + DIContainer.getCurrentUser().getUsername() + "\n"
+                            + "FullName: " + DIContainer.getCurrentUser().getFullName() + "\n"
+                            + "PhoneNumber: " + DIContainer.getCurrentUser().getPhoneNumber() + "\n"
+                            + "Address: " + DIContainer.getCurrentUser().getAddress() + "\n"
+                            + "TypeOfMember: " + DIContainer.getCurrentUser().getTypeOfMember() + "\n"
+            );
         }
     }
 
