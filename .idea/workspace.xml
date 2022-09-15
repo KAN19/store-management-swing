@@ -5,35 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17858409-d0fa-478f-bd10-108bccbcb309" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/helper/Validator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/OrderManagementApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ComboBoxListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/MenuBarListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/mainStoreGUI/ProductTableListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/RegisterListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/user/SignInListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/BaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/BaseDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/CategoryDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/ProductDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/ProductDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CategoryDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CustomerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/CustomerDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/dao/impl/ProductDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/domain/dao/impl/ProductDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/dto/ProductDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/domain/model/dto/UserDto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/helper/DIContainer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/helper/DbConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/presentation/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/presentation/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/BaseGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/MainStoreGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/RegisterGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SignInGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/SignInGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WelcomeGUI.form" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/view/WelcomeGUI.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/customers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/customers.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -162,7 +134,9 @@
       <workItem from="1663088132144" duration="1548000" />
       <workItem from="1663139917817" duration="781000" />
       <workItem from="1663141634650" duration="9911000" />
-      <workItem from="1663170773850" duration="5259000" />
+      <workItem from="1663170773850" duration="5493000" />
+      <workItem from="1663212408088" duration="51000" />
+      <workItem from="1663250954302" duration="1158000" />
     </task>
     <servers />
   </component>
